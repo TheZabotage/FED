@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DebtBook.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DebtBook"
+    xmlns:pages="clr-namespace:DebtBook.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="DebtBook">
+    
+   
+    <ShellContent
+        Title="The Debt Book"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="mainPage" />
+    <ShellContent
+        Title="Add Debt"
+        ContentTemplate="{DataTemplate pages:AddDebtorPage}"
+        Route="addDebtorPage" />
+    <ShellContent
+        Title="Debtor"
+        ContentTemplate="{DataTemplate pages:SpecificDatePage}"
+        Route="specificDebtorPage" />
+
+</Shell>

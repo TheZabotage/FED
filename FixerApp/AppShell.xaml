@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FixerApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FixerApp"
+    xmlns:pages="clr-namespace:FixerApp.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="FixerApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="mainPage" />
+    <ShellContent
+        Title="AddFixerJob"
+        ContentTemplate="{DataTemplate pages:AddFixerJobPage}"
+        Route="addFixerJobPage" />
+    <ShellContent
+        Title="Check Kalender"
+        ContentTemplate="{DataTemplate pages:KalenderPage}"
+        Route="kalenderPage" />
+    <ShellContent
+        Title="Check date"
+        ContentTemplate="{DataTemplate pages:SpecificDatePage}"
+        Route="specificDatePage" />
+
+</Shell>

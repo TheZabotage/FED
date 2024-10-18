@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixerApp", "FixerApp.csproj", "{87CD100B-2128-4464-B2B2-ED1285B45FFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CD100B-2128-4464-B2B2-ED1285B45FFF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31E9CEE7-A15A-4F3C-A257-60A8D4065F4F}
+	EndGlobalSection
+EndGlobal

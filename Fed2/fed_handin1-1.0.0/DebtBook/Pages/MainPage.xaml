@@ -1,0 +1,67 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tk="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:DebtBook.ViewModels"
+             xmlns:m="clr-namespace:DebtBook.Models"
+             x:Class="DebtBook.Pages.MainPage"
+             x:DataType="vm:MainPageVM">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Image Source="dotnet_bot.png"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="75,75"
+                                     RadiusX="60"
+                                     RadiusY="60" />
+                </Image.Clip>
+            </Image>
+
+
+            <Label Text="Debtors" 
+                   FontSize="Title" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="0,10,0,10"/>
+
+            <Button Text="Add"
+                    HorizontalOptions="CenterAndExpand"
+                    Command = "{Binding AddDebtorCommand}"
+                    WidthRequest="100"
+                    Margin="0,0,0,10"/>
+
+            <ListView ItemsSource="{Binding Debtors}"
+                      HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Debtor">
+                        <ViewCell>
+                            <Grid HorizontalOptions="CenterAndExpand" ColumnDefinitions="1*, 1*">
+                                <Button Grid.ColumnSpan="2"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageVM}}, Path=SpecificDebtorCommand}"
+                                        CommandParameter="{Binding Id}"
+                                        HorizontalOptions="Center"
+                                        WidthRequest="300"
+                                        BackgroundColor="Transparent"/>
+                                
+                                <Label Grid.Column="0"
+                                       Text="{Binding Name}"
+                                       FontSize="Subtitle" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="100"
+                                       HorizontalTextAlignment="Start"/>
+                                
+                                <Label Grid.Column="1"
+                                       Text="{Binding Total}" 
+                                       FontSize="Subtitle" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="100"
+                                       HorizontalTextAlignment="End"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

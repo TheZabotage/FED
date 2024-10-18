@@ -1,0 +1,66 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FixerApp.ViewModels"
+             xmlns:m="clr-namespace:FixerApp.Models"
+             x:Class="FixerApp.Pages.KalenderPage"
+             x:DataType="vm:KalenderPageVM">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Image Source="dotnet_bot.png"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="75,75"
+                                     RadiusX="60"
+                                     RadiusY="60" />
+                </Image.Clip>
+            </Image>
+
+
+            <Label Text="Kalender" 
+                   FontSize="Title" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="0,10,0,10"/>
+
+            <Grid RowDefinitions="1*, 1*">
+                <Button Text="Go back"
+                        Grid.Row="1"
+                        Command="{Binding CancelCommand}"
+                        Margin="0,5,0,10"
+                        WidthRequest="400"/>
+            </Grid>
+
+
+            <ListView ItemsSource="{Binding Kalenders}"
+                      HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Kalender">
+                        <ViewCell>
+                            <Grid HorizontalOptions="CenterAndExpand" ColumnDefinitions="1*, 1*">
+                                
+                                <Button Grid.ColumnSpan="2"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:KalenderPageVM}}, Path=SpecificDateCommand}"
+                                        CommandParameter="{Binding Id}"
+                                        HorizontalOptions="Center"
+                                        WidthRequest="300"
+                                        BackgroundColor="Transparent"/>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding Date}"
+                                       FontSize="Subtitle" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="150"
+                                       HorizontalTextAlignment="Center"/>
+
+                        
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

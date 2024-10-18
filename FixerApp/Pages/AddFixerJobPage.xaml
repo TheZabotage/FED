@@ -1,0 +1,63 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FixerApp.ViewModels"
+             xmlns:m="clr-namespace:FixerApp.Models"
+             x:Class="FixerApp.Pages.AddFixerJobPage"
+             x:DataType="vm:AddFixerJobVM">
+    <StackLayout>
+        <Label Text="Add new FixerJob" FontSize="Title" 
+               HorizontalOptions="CenterAndExpand" 
+               Margin="0,20,0,20"/>
+
+        <Entry Placeholder="Customer Name" 
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding Customer}"
+               Margin="0,20,0,5"
+               WidthRequest="400"/>
+        <Entry Placeholder="Customer Address"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding CustomerAddress}"
+               Margin="0,5,0,20"
+               WidthRequest="400"/>
+        <Entry Placeholder="Make and model of car"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding MakeAndModel}"
+               Margin="0,5,0,20"
+               WidthRequest="400"/>
+        <Entry Placeholder="Plate Number"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding RegisterNumber}"
+               Margin="0,5,0,20"
+               WidthRequest="400"/>
+        <Entry Placeholder="Delivery Date: DD-MM-YYYY"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding DeliveryDateTime}"
+               Margin="0,5,0,20"
+               WidthRequest="400"/>
+        <Entry Placeholder="What needs fixing?"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Start"
+               Text="{Binding JobToDo}"
+               Margin="0,5,0,20"
+               WidthRequest="400"/>
+        <Grid RowDefinitions="1*, 1*">
+            <Button Text="Save"
+                    Grid.Row="0"
+                    Command="{Binding AddFixerJobCommand}"
+                    Margin="0,20,0,5"
+                    WidthRequest="400"/>
+            <Button Text="Cancel"
+                    Grid.Row="1"
+                    Command="{Binding CancelCommand}"
+                    Margin="0,5,0,10"
+                    WidthRequest="400"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
+
+

@@ -1,0 +1,36 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FixerApp.ViewModels"
+             xmlns:m="clr-namespace:FixerApp.Models"
+             x:Class="FixerApp.Pages.SpecificDatePage"
+             x:DataType="vm:SpecificDateVM">
+    <ScrollView>
+        <StackLayout>
+
+            <Label Text="{Binding Kalender.Date}" 
+                   FontSize="Title" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="0,20,0,20"/>
+
+            <ListView x:Name="TransactionsListView"
+                      ItemsSource="{Binding Kalender}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Kalender">
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Date}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="Small"/>
+
+                                <Label Text="{Binding FixerJobs}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
